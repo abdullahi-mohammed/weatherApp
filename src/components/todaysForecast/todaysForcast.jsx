@@ -9,7 +9,7 @@ const TodaysForecast = ({ todaysHourlyForecast, todaysDailyForecast }) => {
 
     const [todaysForecastData, setTodaysForecastData] = useState()
 
-    console.log(todaysDailyForecast.html)
+    console.log(todaysDailyForecast)
 
     useEffect(
         () => {
