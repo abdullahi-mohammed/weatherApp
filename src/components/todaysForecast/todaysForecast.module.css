@@ -14,41 +14,10 @@
     padding: 0;
 }
 
-.todaysForecastWeb ul {
-    /* font-size: 18px;
-    font-weight: 400;
-
-    padding: 35px 0; */
-}
-
 .todaysForecastWeb p {
     margin: 0;
     padding: 0;
 }
-
-.todaysForecastWeb ul li.active a {
-    /* font-weight: 700; */
-}
-
-.todaysForecastWeb ul li a {
-    /* color: rgb(43, 43, 43);
-    text-decoration: none; */
-}
-
-/* .todaysForecastWeb ul li a p:nth-child(2) {
-    color: rgb(27, 77, 228);
-    font-size: 36px;
-    font-weight: 400;
-    margin: 0;
-    padding: 0;
-} */
-
-/* .daysWeb {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 5px 40px;
-} */
 
 .daysWeb {
     list-style: none;
@@ -60,6 +29,8 @@
     padding: 35px 0;
     font-size: 18px;
     font-weight: 400;
+
+    transform: translateX(0);
 }
 
 .daysWeb li:not(:last-child) {
@@ -149,21 +120,30 @@
         padding: 5px 20px;
     }
 
+    .forecasts {
+        transition: all 2s linear ease-in-out;
+    }
+
     .forecasts div {
         display: none;
     }
 
     .forecasts div.forecastActive {
         display: block;
+
     }
 
-    /* .forecast>ul>li:first-child {
-        background-color: #1b4de4;
-        color: #fff;
-        width: 100%;
-        padding: 5px 20px;
-        border-radius: 20px;
-    } */
+    .forecasts div.forecastActive.dailyForecast ul {
+        transform: translatex(0);
+    }
+
+    .forecasts div.forecastActive.daysWeb ul {
+        transform: translatex(0);
+    }
+
+    .forecasts div.forecastActive.hourlyForecast ul {
+        transform: translatex(0);
+    }
 
     .forecast ul li.activeForecast {
         background-color: #1b4de4;
@@ -196,6 +176,7 @@
         display: flex;
         justify-content: center;
         flex-basis: 20%;
+        text-align: center;
     }
 }
 
@@ -208,6 +189,8 @@
     padding: 35px 0;
     text-align: center;
     margin: 0;
+
+    transform: translatex(100%);
 }
 
 .dailyForecast ul li:not(:last-child) {
@@ -246,6 +229,7 @@
     display: flex;
     justify-content: center;
     flex-basis: 20%;
+    text-align: center;
 }
 
 
@@ -258,6 +242,8 @@
     justify-content: center;
     padding: 35px 0;
     margin: 0;
+
+    transform: translateX(50%);
 }
 
 .hourlyForecast ul li:not(:last-child) {
@@ -287,4 +273,5 @@
     display: flex;
     justify-content: center;
     flex-basis: 20%;
+    text-align: center;
 }

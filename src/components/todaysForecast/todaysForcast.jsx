@@ -3,11 +3,13 @@ import styles from './todaysForecast.module.css';
 import { Link } from 'react-router-dom';
 import { getTodaysForecast } from './helpers';
 
-const TodaysForcast = () => {
+const TodaysForecast = ({ todaysHourlyForecast, todaysDailyForecast }) => {
 
     const [currForcast, setCurrForecast] = useState('today') // for mobile screen
 
     const [todaysForecastData, setTodaysForecastData] = useState()
+
+    console.log(todaysDailyForecast)
 
     useEffect(
         () => {
@@ -18,6 +20,7 @@ const TodaysForcast = () => {
         }, [])
 
     console.log(todaysForecastData)
+    console.log(todaysHourlyForecast);
 
     const todaysForecast =
         <ul className={styles.daysWeb}>
@@ -59,9 +62,10 @@ const TodaysForcast = () => {
             <div className={styles.todaysForecastWeb}>
                 <h4>Today's Forecast for Suleja, Niger</h4>
                 {todaysForecast}
-                <button type='button'>Next Hours</button>
+                {/* <button type='button'>Next Hours</button> */}
             </div>
 
+            {/* mobile screen */}
             <div className={styles.forecast}>
                 <h4>Suleja, Niger Forecast</h4>
                 <ul>
@@ -74,92 +78,10 @@ const TodaysForcast = () => {
                         {todaysForecast}
                     </div >
                     <div className={currForcast == 'hourly' && `${styles.forecastActive} ${styles.hourlyForecast}`}>
-                        <ul>
-                            <li>
-                                <Link>
-                                    <p>Now</p>
-                                    <p>26</p>
-                                    <img src="" alt="" />
-                                    <p>19%</p>
-                                </Link>
-                            </li>
-                            <li>
-                                <Link>
-                                    <p>22:00</p>
-                                    <p>26</p>
-                                    <img src="" alt="" />
-                                    <p>19%</p>
-                                </Link>
-                            </li>
-                            <li>
-                                <Link>
-                                    <p>22:00</p>
-                                    <p>26</p>
-                                    <img src="" alt="" />
-                                    <p>19%</p>
-                                </Link>
-                            </li>
-                            <li>
-                                <Link>
-                                    <p>22:00</p>
-                                    <p>26</p>
-                                    <img src="" alt="" />
-                                    <p>19%</p>
-                                </Link>
-                            </li>
-                            <li>
-                                <Link>
-                                    <p>22:00</p>
-                                    <p>26</p>
-                                    <img src="" alt="" />
-                                    <p>19%</p>
-                                </Link>
-                            </li>
-                        </ul>
+                        {todaysHourlyForecast}
                     </div>
                     <div className={currForcast == 'daily' && `${styles.forecastActive} ${styles.dailyForecast}`} >
-                        <ul>
-                            <li>
-                                <Link>
-                                    <p>Now</p>
-                                    <p>26 <span>23</span></p>
-                                    <img src="" alt="" />
-                                    <p>19%</p>
-                                </Link>
-                            </li>
-                            <li>
-                                <Link>
-                                    <p>22:00</p>
-                                    <p>26 <span>23</span></p>
-                                    <img src="" alt="" />
-                                    <p>19%</p>
-                                </Link>
-                            </li>
-                            <li>
-                                <Link>
-                                    <p>22:00</p>
-                                    <p>26 <span>23</span></p>
-                                    <img src="" alt="" />
-                                    <p>19%</p>
-                                </Link>
-                            </li>
-                            <li>
-                                <Link>
-                                    <p>22:00</p>
-                                    <p>26 <span>23</span></p>
-                                    <img src="" alt="" />
-                                    <p>19%</p>
-                                </Link>
-                            </li>
-                            <li>
-                                <Link>
-                                    <p>22:00</p>
-                                    <p>26 <span>23</span></p>
-                                    <img src="" alt="" />
-                                    <p>19%</p>
-                                </Link>
-                            </li>
-                        </ul>
+                        {todaysDailyForecast}
                     </div>
                 </div>
 
@@ -168,4 +90,4 @@ const TodaysForcast = () => {
     )
 }
 
-export default TodaysForcast
+export default TodaysForecast
