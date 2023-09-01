@@ -1,0 +1,79 @@
+.hourlyForecast {
+    background-color: #fff;
+    color: #000;
+    width: 100%;
+    border-radius: 8px;
+    padding: 20px;
+}
+
+.hourlyForecast h4 {
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 24px;
+    color: rgb(43, 43, 43);
+}
+
+.hourlyForecast ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    padding: 35px 0;
+    margin: 0;
+}
+
+.hourlyForecast ul li:not(:last-child) {
+    border-right: 2px grey solid;
+    border-image: linear-gradient(180deg, hsla(0, 0%, 87.1%, 0) 0, #dedede 25%, #dedede 70%, hsla(0, 0%, 87.1%, 0) 85%, hsla(0, 0%, 87.1%, 0)) 1 100%;
+}
+
+.hourlyForecast ul li a {
+    margin-top: -10px;
+    color: rgb(43, 43, 43);
+    font-size: 18px;
+    font-weight: 400;
+    text-decoration: none;
+}
+
+.hourlyForecast ul li p {
+    padding: 0;
+    margin: 0
+}
+
+.hourlyForecast ul li a p:nth-child(2) {
+    color: rgb(27, 77, 228);
+    font-size: 36px;
+}
+
+.hourlyForecast ul li {
+    display: flex;
+    justify-content: center;
+    flex-basis: 20%;
+    text-align: center;
+}
+
+.hourlyForecast button {
+    color: #fff;
+    background-color: blue;
+    border-radius: 15px;
+    outline: none;
+    appearance: none;
+    border: none;
+    padding: 10px;
+
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.todaysForecastWeb button:hover {
+    box-shadow: 0 0 5px 0 rgba(27, 77, 228, .8);
+    cursor: pointer;
+}
+
+
+@media screen and (max-width: 840px) {
+    .hourlyForecast {
+        display: none;
+    }
+}

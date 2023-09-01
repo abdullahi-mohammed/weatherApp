@@ -1,0 +1,72 @@
+.hero {
+    background-image: url(../../assets//Weather_BG_PartlyCloudy.webp);
+    color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    width: 100%;
+}
+
+.hero h4 {
+    background-color: rgba(0, 0, 0, 0.55);
+    margin: 0;
+    padding: 20px;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.hero h4>span {
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.heroBody {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+
+.heroBody div p:first-child {
+    font-size: 96px;
+    font-weight: 500;
+    line-height: 96px;
+    margin: 0;
+    padding: 0;
+}
+
+.heroBody div p:nth-child(2) {
+    font-size: 24px;
+    font-weight: 600;
+    margin: 0;
+    padding: 0;
+}
+
+.heroBody div p:nth-child(3) {
+    font-size: 24px;
+    font-weight: 700;
+    margin: 0;
+    padding: 0;
+}
+
+.heroBody>div:nth-child(2) {
+    display: flex;
+    align-items: center;
+}
+
+.heroBody div:nth-child(2) img {
+    width: 200px;
+    height: 140px;
+    object-fit: cover;
+}
+
+.heroBody div:nth-child(2) svg {
+    display: inline-block;
+    height: auto;
+    width: 24px;
+
+    color: #fff;
+
+    width: 64px !important;
+    filter: drop-shadow(0 0 10px var(rgba(0, 0, 0, 0.55)));
+}
