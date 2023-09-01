@@ -6,7 +6,7 @@ import { dateDays } from '../helpers/dateTime'
 
 const DailyForecast = (props) => {
     const [dailyForecastData, setDailyForecastData] = useState()
-    const DAYS = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday']
+    const DAYS = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
 
     useEffect(
         () => {
