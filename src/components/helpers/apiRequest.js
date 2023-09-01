@@ -1,4 +1,4 @@
-const BaseURL = 'http://api.weatherapi.com/v1/forecast.json?key=c1d0d0d1154b4d759ea122932233108&q=nigeria'
+const BaseURL = 'https://api.weatherapi.com/v1/forecast.json?key=c1d0d0d1154b4d759ea122932233108&q=nigeria'
 
 // export const apiRequest = async function (path, method) {
 //     try {

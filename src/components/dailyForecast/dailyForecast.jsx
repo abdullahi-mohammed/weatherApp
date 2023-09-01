@@ -20,7 +20,7 @@ const DailyForecast = (props) => {
 
     useEffect(() => {
         props.dailyForecast(dailyForecast, dailyForecastData)
-    }, [])
+    }, [dailyForecastData])
 
     const dailyForecast =
         <ul>
