@@ -61,6 +61,12 @@
 }
 
 @media screen and (max-width:700px) {
+
+    .hero h4 {
+        padding: 10px;
+        font-size: 14px;
+    }
+
     .heroBody div p:first-child {
         font-size: 70px;
     }
