@@ -55,18 +55,23 @@
 }
 
 .heroBody div:nth-child(2) img {
-    width: 200px;
+    width: 140px;
     height: 140px;
     object-fit: cover;
 }
 
-.heroBody div:nth-child(2) svg {
-    display: inline-block;
-    height: auto;
-    width: 24px;
+@media screen and (max-width:700px) {
+    .heroBody div p:first-child {
+        font-size: 70px;
 
-    color: #fff;
+    }
 
-    width: 64px !important;
-    filter: drop-shadow(0 0 10px var(rgba(0, 0, 0, 0.55)));
+    .heroBody div p:nth-child(2) {
+        font-size: 18px;
+    }
+
+    .heroBody div p:nth-child(3) {
+        font-size: 18px;
+    }
+
 }
