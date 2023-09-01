@@ -9,7 +9,7 @@ const TodaysForecast = ({ todaysHourlyForecast, todaysDailyForecast }) => {
 
     const [todaysForecastData, setTodaysForecastData] = useState()
 
-    console.log(todaysDailyForecast)
+    console.log(todaysDailyForecast.html)
 
     useEffect(
         () => {
@@ -61,7 +61,7 @@ const TodaysForecast = ({ todaysHourlyForecast, todaysDailyForecast }) => {
         <>
             <div className={styles.todaysForecastWeb}>
                 <h4>Today's Forecast for Suleja, Niger</h4>
-                {todaysForecast}
+                {todaysForecastData && todaysForecast}
                 {/* <button type='button'>Next Hours</button> */}
             </div>
 
@@ -75,10 +75,10 @@ const TodaysForecast = ({ todaysHourlyForecast, todaysDailyForecast }) => {
                 </ul>
                 <div className={styles.forecasts}>
                     <div className={currForcast == 'today' && `${styles.forecastActive} ${styles.daysweb}`}>
-                        {todaysForecast}
+                        {todaysForecastData && todaysForecast}
                     </div >
                     <div className={currForcast == 'hourly' && `${styles.forecastActive} ${styles.hourlyForecast}`}>
-                        {todaysHourlyForecast}
+                        {todaysHourlyForecast && todaysHourlyForecast}
                     </div>
                     <div className={currForcast == 'daily' && `${styles.forecastActive} ${styles.dailyForecast}`} >
                         {todaysDailyForecast}

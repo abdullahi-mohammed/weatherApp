@@ -71,7 +71,7 @@ const DailyForecast = (props) => {
     return (
         <div className={styles.dailyForecast}>
             <h4>Daily Forecast</h4>
-            {dailyForecast}
+            {dailyForecastData && dailyForecast}
             {/* <button type='button'>Next 10 Days</button> */}
         </div>
     )

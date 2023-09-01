@@ -9,3 +9,7 @@ export const apiRequest = async function (path, method) {
         console.log(error)
     }
 }
+
+// export const api = new Promise((resolve, reject) => {
+    
+// })

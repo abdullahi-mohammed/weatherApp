@@ -69,7 +69,7 @@ const HourlyForecast = (props) => {
     return (
         <div className={styles.hourlyForecast}>
             <h4>Hourly Forecast</h4>
-            {hourlyForecast}
+            {hourlyForecastData && hourlyForecast}
             {/* <button type='button'>Next 48 Hours</button> */}
         </div>
     )
