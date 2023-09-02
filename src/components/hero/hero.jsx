@@ -13,14 +13,8 @@ const Hero = () => {
             resolve(response)
             setHeroWeatherData(response)
             reject('not found error')
-            console.log(response, 'promise resolved')
         })
     }, [])
-
-    console.log(heroWeaherData);
-
-    const date = new Date()
-    console.log(date);
 
     return (
         <div className={styles.hero}>
@@ -28,12 +22,12 @@ const Hero = () => {
             {heroWeaherData
                 && <div className={styles.heroBody}>
                     <div>
-                        <p>{heroWeaherData ? heroWeaherData.current.temp_c : '_ _'}°</p>
-                        <p>{heroWeaherData ? heroWeaherData.current.condition.text : '_ _'}</p>
-                        <p>Day {heroWeaherData ? heroWeaherData.forecast.forecastday[0].hour[12].temp_c : '_ _'}° • Night {heroWeaherData ? heroWeaherData.forecast.forecastday[0].hour[0].temp_c : '_ _'}°</p>
+                        <p>{heroWeaherData.current.temp_c}°</p>
+                        <p>{heroWeaherData.current.condition.text}</p>
+                        <p>Day {heroWeaherData.forecast.forecastday[0].hour[12].temp_c}° • Night {heroWeaherData.forecast.forecastday[0].hour[0].temp_c}°</p>
                     </div>
                     <div>
-                        <img src={heroWeaherData ? heroWeaherData.current.condition.icon : '_ _'} alt="" />
+                        <img src={heroWeaherData.current.condition.icon} alt="" />
                     </div>
                 </div>
             }

@@ -13,7 +13,6 @@ function App() {
 
   const hourlyForecastFn = (html, data) => {
     setHourlyForecast(html, data)
-    console.log(html, data);
   }
 
   const dailyForecastFn = (html, data) => {
