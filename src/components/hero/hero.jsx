@@ -18,7 +18,9 @@ const Hero = () => {
 
     return (
         <div className={styles.hero}>
-            <h4>Suleja, Niger <span>As of {TimeHours}:00 WAT</span></h4>
+            {heroWeaherData &&
+                <h4> {heroWeaherData.location.name + ', ' + heroWeaherData.location.country} <span>As of {TimeHours}:00 WAT</span></h4>
+            }
             {heroWeaherData
                 && <div className={styles.heroBody}>
                     <div>

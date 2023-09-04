@@ -18,53 +18,58 @@ const TodaysForecast = ({ todaysHourlyForecast, todaysDailyForecast }) => {
             })()
         }, [])
 
+
     const todaysForecast =
         todaysForecastData &&
         <ul className={styles.daysWeb}>
             <li>
                 <Link >
                     <p>Morning</p>
-                    <p>{todaysForecastData.hour[7].temp_c}</p>
-                    <img src={todaysForecastData.hour[7].condition.icon} alt="" />
-                    <p>{todaysForecastData.day.daily_chance_of_rain}%</p>
+                    <p>{todaysForecastData.forecast.forecastday[0].hour[7].temp_c}</p>
+                    <img src={todaysForecastData.forecast.forecastday[0].hour[7].condition.icon} alt="" />
+                    <p>{todaysForecastData.forecast.forecastday[0].day.daily_chance_of_rain}%</p>
                 </Link>
             </li>
             <li>
                 <Link>
                     <p>Afternoon</p>
-                    <p>{todaysForecastData.hour[7].temp_c}</p>
-                    <img src={todaysForecastData.hour[7].condition.icon} alt="" />
-                    <p>{todaysForecastData.day.daily_chance_of_rain}%</p>
+                    <p>{todaysForecastData.forecast.forecastday[0].hour[7].temp_c}</p>
+                    <img src={todaysForecastData.forecast.forecastday[0].hour[7].condition.icon} alt="" />
+                    <p>{todaysForecastData.forecast.forecastday[0].day.daily_chance_of_rain}%</p>
                 </Link>
             </li>
             <li>
                 <Link>
                     <p>Evening</p>
-                    <p>{todaysForecastData.hour[7].temp_c}</p>
-                    <img src={todaysForecastData.hour[7].condition.icon} alt="" />
-                    <p>{todaysForecastData.day.daily_chance_of_rain}%</p>
+                    <p>{todaysForecastData.forecast.forecastday[0].hour[7].temp_c}</p>
+                    <img src={todaysForecastData.forecast.forecastday[0].hour[7].condition.icon} alt="" />
+                    <p>{todaysForecastData.forecast.forecastday[0].day.daily_chance_of_rain}%</p>
                 </Link>
             </li>
             <li className={styles.active}>
                 <Link>
                     <p>Overnight</p>
-                    <p>{todaysForecastData.hour[7].temp_c}</p>
-                    <img src={todaysForecastData.hour[7].condition.icon} alt="" />
-                    <p>{todaysForecastData.day.daily_chance_of_rain}%</p>
+                    <p>{todaysForecastData.forecast.forecastday[0].hour[7].temp_c}</p>
+                    <img src={todaysForecastData.forecast.forecastday[0].hour[7].condition.icon} alt="" />
+                    <p>{todaysForecastData.forecast.forecastday[0].day.daily_chance_of_rain}%</p>
                 </Link>
             </li>
         </ul>
     return (
         <>
             <div className={styles.todaysForecastWeb}>
-                <h4>Today's Forecast for Suleja, Niger</h4>
+                {todaysForecastData && <h4>Today's Forecast for {todaysForecastData.location.name + ', ' + todaysForecastData.location.country} </h4>}
                 {todaysForecast}
                 {/* <button type='button'>Next Hours</button> */}
             </div>
 
             {/* mobile screen */}
             <div className={styles.forecast}>
-                <h4>Suleja, Niger Forecast</h4>
+
+                {todaysForecastData &&
+                    <h4>{todaysForecastData.location.name + ' ' + todaysForecastData.location.country} Forecast</h4>
+
+                }
                 <ul>
                     <li className={currForcast == 'today' ? styles.activeForecast : ''} onClick={() => setCurrForecast('today')}>Today</li>
                     <li className={currForcast == 'hourly' ? styles.activeForecast : ''} onClick={() => setCurrForecast('hourly')}>Hourly</li>
