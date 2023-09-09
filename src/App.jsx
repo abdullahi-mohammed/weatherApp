@@ -34,6 +34,7 @@ function App() {
   const handleWeatherSubmit = (e) => {
     e.preventDefault()
     setWeatherValue(searchVal)
+    setSearchVal('')
   }
 
   const position = (coords) => {
