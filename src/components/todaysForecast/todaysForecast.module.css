@@ -220,7 +220,7 @@
     .dailyForecast ul li p:nth-child(2) span {
         color: rgb(43, 43, 43);
         font-size: 12px;
-        margin-top: -8px;
+        margin-top: -4px;
     }
 
     .dailyForecast ul li {
