@@ -42,7 +42,10 @@ function App() {
     setWeatherValue(lat, lon)
   }
 
-  navigator.geolocation.getCurrentPosition(position)
+  useEffect(() => {
+    navigator.geolocation.getCurrentPosition(position)
+  }, [])
+
 
 
   useEffect(() => {
