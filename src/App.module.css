@@ -56,10 +56,59 @@
   margin: 50px auto;
 }
 
+.weatherSearch {
+  width: 100%;
+  text-align: center;
+}
+
+.weatherSearch form {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin: 0 auto;
+  width: 80%;
+  border-radius: 25px;
+  padding: 5px 10px;
+  outline: none;
+  border: none;
+  border-image-outset: none;
+  background-color: #fff;
+}
+
+.weatherSearch input {
+  background-color: transparent;
+  border: none;
+  width: 100%;
+  font-size: 16px;
+}
+
+.weatherSearch input:focus-visible {
+  border: none;
+  outline: none;
+}
+
+.weatherSearch button {
+  box-sizing: border-box;
+  border-radius: 20px;
+  padding: 5px 10px;
+  background-color: #2121f1;
+  border: none;
+  font-size: 16px;
+  color: #fff;
+  cursor: pointer;
+}
+
+.weatherSearch>div {
+  margin-top: 10px;
+  color: orange;
+
+}
+
 @media screen and (max-width: 840px) {
   .weatherApp {
     width: 100%;
-    min-width: 500px;
     padding: 5px;
+    overflow-x: hidden;
   }
 }

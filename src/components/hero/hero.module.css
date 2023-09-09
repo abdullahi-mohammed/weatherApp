@@ -1,3 +1,18 @@
+.weatherSearch {
+    width: 100%;
+    text-align: center;
+}
+
+.weatherSearch input {
+    width: 80%;
+    border-radius: 20px;
+    padding: 5px 10px;
+    outline: none;
+    border: none;
+    border-image-outset: none;
+    font-size: 16px;
+}
+
 .hero {
     background-image: url(../../assets//Weather_BG_PartlyCloudy.webp);
     color: #fff;

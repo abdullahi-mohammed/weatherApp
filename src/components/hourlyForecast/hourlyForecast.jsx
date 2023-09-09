@@ -1,20 +1,23 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import styles from './hourlyForecast.module.css'
 import { Link } from 'react-router-dom'
 import { getHourlyForecast } from './helper';
 import { TimeHours } from '../helpers/dateTime';
+import myContext from '../helpers/contextApi';
 
 const HourlyForecast = (props) => {
 
     const [hourlyForecastData, setHourlyForecastData] = useState()
 
+    const weatherValue = useContext(myContext)
+
     useEffect(() => {
         async function hourlyForecast() {
-            const data = await getHourlyForecast()
+            const data = await getHourlyForecast(weatherValue)
             setHourlyForecastData(data)
         }
         hourlyForecast()
-    }, [])
+    }, [weatherValue])
 
     useEffect(() => {
         props.hourlyForecast(hourlyForecast, hourlyForecastData)
@@ -68,8 +71,11 @@ const HourlyForecast = (props) => {
 
     return (
         <div className={styles.hourlyForecast}>
-            <h4>Hourly Forecast</h4>
-            {hourlyForecast}
+
+            {hourlyForecastData && <>
+                <h4>Hourly Forecast</h4>
+                {hourlyForecast}
+            </>}
             {/* <button type='button'>Next 48 Hours</button> */}
         </div>
     )

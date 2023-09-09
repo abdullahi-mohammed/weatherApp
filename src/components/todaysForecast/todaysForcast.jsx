@@ -1,22 +1,24 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import styles from './todaysForecast.module.css';
 import { Link } from 'react-router-dom';
 import { getTodaysForecast } from './helpers';
+import myContext from '../helpers/contextApi';
 
 const TodaysForecast = ({ todaysHourlyForecast, todaysDailyForecast }) => {
 
     const [currForcast, setCurrForecast] = useState('today') // for mobile screen
-
     const [todaysForecastData, setTodaysForecastData] = useState()
+
+    const weatherValue = useContext(myContext)
 
 
     useEffect(
         () => {
             (async function () {
-                const data = await getTodaysForecast()
+                const data = await getTodaysForecast(weatherValue)
                 setTodaysForecastData(data)
             })()
-        }, [])
+        }, [weatherValue])
 
 
     const todaysForecast =
@@ -25,33 +27,33 @@ const TodaysForecast = ({ todaysHourlyForecast, todaysDailyForecast }) => {
             <li>
                 <Link >
                     <p>Morning</p>
-                    <p>{todaysForecastData.forecast.forecastday[0].hour[7].temp_c}</p>
-                    <img src={todaysForecastData.forecast.forecastday[0].hour[7].condition.icon} alt="" />
-                    <p>{todaysForecastData.forecast.forecastday[0].day.daily_chance_of_rain}%</p>
+                    <p>{todaysForecastData.forecast.forecastday[0].hour[10].temp_c}</p>
+                    <img src={todaysForecastData.forecast.forecastday[0].hour[10].condition.icon} alt="" />
+                    <p>{todaysForecastData.forecast.forecastday[0].hour[10].chance_of_rain}%</p>
                 </Link>
             </li>
             <li>
                 <Link>
                     <p>Afternoon</p>
-                    <p>{todaysForecastData.forecast.forecastday[0].hour[7].temp_c}</p>
-                    <img src={todaysForecastData.forecast.forecastday[0].hour[7].condition.icon} alt="" />
-                    <p>{todaysForecastData.forecast.forecastday[0].day.daily_chance_of_rain}%</p>
+                    <p>{todaysForecastData.forecast.forecastday[0].hour[13].temp_c}</p>
+                    <img src={todaysForecastData.forecast.forecastday[0].hour[13].condition.icon} alt="" />
+                    <p>{todaysForecastData.forecast.forecastday[0].hour[13].chance_of_rain}%</p>
                 </Link>
             </li>
             <li>
                 <Link>
                     <p>Evening</p>
-                    <p>{todaysForecastData.forecast.forecastday[0].hour[7].temp_c}</p>
-                    <img src={todaysForecastData.forecast.forecastday[0].hour[7].condition.icon} alt="" />
-                    <p>{todaysForecastData.forecast.forecastday[0].day.daily_chance_of_rain}%</p>
+                    <p>{todaysForecastData.forecast.forecastday[0].hour[19].temp_c}</p>
+                    <img src={todaysForecastData.forecast.forecastday[0].hour[19].condition.icon} alt="" />
+                    <p>{todaysForecastData.forecast.forecastday[0].hour[19].chance_of_rain}%</p>
                 </Link>
             </li>
             <li className={styles.active}>
                 <Link>
                     <p>Overnight</p>
-                    <p>{todaysForecastData.forecast.forecastday[0].hour[7].temp_c}</p>
-                    <img src={todaysForecastData.forecast.forecastday[0].hour[7].condition.icon} alt="" />
-                    <p>{todaysForecastData.forecast.forecastday[0].day.daily_chance_of_rain}%</p>
+                    <p>{todaysForecastData.forecast.forecastday[0].hour[23].temp_c}</p>
+                    <img src={todaysForecastData.forecast.forecastday[0].hour[23].condition.icon} alt="" />
+                    <p>{todaysForecastData.forecast.forecastday[0].hour[23].chance_of_rain}%</p>
                 </Link>
             </li>
         </ul>

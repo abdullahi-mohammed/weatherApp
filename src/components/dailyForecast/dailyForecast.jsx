@@ -1,21 +1,24 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import styles from './dailyForecast.module.css'
 import { getDailyForecast } from './helpers'
 import { Link } from 'react-router-dom'
 import { dateDays } from '../helpers/dateTime'
+import myContext from '../helpers/contextApi'
 
 const DailyForecast = (props) => {
     const [dailyForecastData, setDailyForecastData] = useState()
     const DAYS = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
 
+    const weatherValue = useContext(myContext)
+
     useEffect(
         () => {
             async function data() {
-                const response = await getDailyForecast()
+                const response = await getDailyForecast(weatherValue)
                 setDailyForecastData(response.forecast.forecastday)
             }
             data()
-        }, [])
+        }, [weatherValue])
 
     useEffect(() => {
         props.dailyForecast(dailyForecast, dailyForecastData)
