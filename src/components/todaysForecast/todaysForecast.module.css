@@ -1,36 +1,92 @@
 .todaysForecastWeb {
-    border-radius: 8px;
-    padding: 20px;
-    background-color: #fff;
+    display: none;
+}
+
+.forecast {
+    display: block;
     color: rgb(43, 43, 43);
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 10px;
     width: 100%;
 }
 
-.todaysForecastWeb h4 {
+.forecast h4 {
     font-size: 20px;
     font-weight: 600;
+    color: rgb(43, 43, 43);
     line-height: 24px;
     margin: 0;
     padding: 0;
 }
 
-.todaysForecastWeb p {
-    margin: 0;
+.forecast>ul {
+    display: flex;
+    justify-content: space-between;
     padding: 0;
+    align-items: center;
+    list-style: none;
+    border: 1px solid #dedede;
+    border-radius: 27px;
+    transition: background-color 1s linear ease-in-out;
+}
+
+.forecast>ul>li {
+    flex: 1;
+    text-align: center;
+    padding: 5px 20px;
+}
+
+.forecasts {
+    transition: all 2s linear ease-in-out;
+}
+
+.forecasts div {
+    display: none;
+}
+
+.forecasts div.forecastActive {
+    display: block;
+
+}
+
+.forecasts div.forecastActive.dailyForecast ul {
+    transform: translatex(0);
+}
+
+.forecasts div.forecastActive.daysWeb ul {
+    transform: translatex(0);
+}
+
+.forecasts div.forecastActive.hourlyForecast ul {
+    transform: translatex(0);
+}
+
+.forecast ul li.activeForecast {
+    background-color: #1b4de4;
+    color: #fff;
+    width: 100%;
+    padding: 5px 20px;
+    border-radius: 20px;
 }
 
 .daysWeb {
+    padding: 5px 0;
+    font-size: 12px;
+
     list-style: none;
     display: flex;
     box-sizing: border-box;
     justify-content: center;
     margin: 0;
-
-    padding: 35px 0;
-    font-size: 18px;
     font-weight: 400;
 
     transform: translateX(0);
+}
+
+.daysWeb p {
+    margin: 0;
+    padding: 0;
 }
 
 .daysWeb li:not(:last-child) {
@@ -57,15 +113,137 @@
 }
 
 .daysWeb li a p:nth-child(2) {
+    font-size: 20px;
     color: rgb(27, 77, 228);
-    font-size: 36px;
     font-weight: 400;
     margin: 0;
     padding: 0;
 }
 
+.daysWeb li img {
+    width: 40px;
+}
 
-.todaysForecastWeb button {
+/* ----------------------------------------- */
+
+.dailyForecast ul {
+    list-style: none;
+    display: flex;
+    box-sizing: border-box;
+    justify-content: center;
+    padding: 5px 0;
+    text-align: center;
+    margin: 0;
+
+    transform: translatex(100%);
+}
+
+.dailyForecast ul li:not(:last-child) {
+    border-right: 2px grey solid;
+    border-image: linear-gradient(180deg, hsla(0, 0%, 87.1%, 0) 0, #dedede 25%, #dedede 70%, hsla(0, 0%, 87.1%, 0) 85%, hsla(0, 0%, 87.1%, 0)) 1 100%;
+}
+
+.dailyForecast ul li a {
+    margin-top: -10px;
+    text-decoration: none;
+    color: rgb(43, 43, 43);
+    font-size: 12px;
+    font-weight: 400;
+}
+
+.dailyForecast ul li p {
+    margin: 0;
+    padding: 0;
+}
+
+
+.dailyForecast ul li p:nth-child(2) {
+    color: rgb(27, 77, 228);
+    font-size: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.dailyForecast ul li p:nth-child(2) span {
+    color: rgb(43, 43, 43);
+    font-size: 12px;
+    margin-top: -4px;
+}
+
+.dailyForecast ul li {
+    display: flex;
+    justify-content: center;
+    flex-basis: 20%;
+    text-align: center;
+}
+
+.dailyForecast ul li img {
+    width: 40px;
+}
+
+/* -------------------------------- */
+
+.hourlyForecast ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    padding: 5px 0;
+    margin: 0;
+
+    transform: translateX(50%);
+}
+
+.hourlyForecast ul li:not(:last-child) {
+    border-right: 2px grey solid;
+    border-image: linear-gradient(180deg, hsla(0, 0%, 87.1%, 0) 0, #dedede 25%, #dedede 70%, hsla(0, 0%, 87.1%, 0) 85%, hsla(0, 0%, 87.1%, 0)) 1 100%;
+}
+
+.hourlyForecast ul li a {
+    margin-top: -10px;
+    color: rgb(43, 43, 43);
+    font-size: 12px;
+    font-weight: 400;
+    text-decoration: none;
+}
+
+.hourlyForecast ul li p {
+    padding: 0;
+    margin: 0
+}
+
+.hourlyForecast ul li a p:nth-child(2) {
+    color: rgb(27, 77, 228);
+    font-size: 20px;
+}
+
+.hourlyForecast ul li {
+    display: flex;
+    justify-content: center;
+    flex-basis: 20%;
+    text-align: center;
+}
+
+.hourlyForecast ul li img {
+    width: 40px;
+}
+
+.todaysForecastWeb {
+    border-radius: 8px;
+    padding: 20px;
+    background-color: #fff;
+    color: rgb(43, 43, 43);
+    width: 100%;
+}
+
+.todaysForecastWeb h4 {
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 24px;
+    margin: 0;
+    padding: 0;
+}
+
+/* .todaysForecastWeb button {
     color: #fff;
     background-color: blue;
     border-radius: 15px;
@@ -80,204 +258,28 @@
 .todaysForecastWeb button:hover {
     box-shadow: 0 0 5px 0 rgba(27, 77, 228, .8);
     cursor: pointer;
-}
+} */
 
 .forecast {
-    display: none;
+    display: block;
 }
 
-@media screen and (max-width: 840px) {
+@media screen and (min-width: 840px) {
     .todaysForecastWeb {
+        display: block;
+    }
+
+    .forecast {
         display: none;
     }
 
     .daysWeb {
-        padding: 5px 0;
-        font-size: 12px;
-
-    }
-
-    .daysWeb p {
-        margin: 0;
-        padding: 0;
+        padding: 35px 0;
+        font-size: 18px;
     }
 
     .daysWeb li a p:nth-child(2) {
-        font-size: 20px;
-    }
-
-    .daysWeb li img {
-        width: 40px;
-    }
-
-
-    .forecast {
-        display: block;
-        color: rgb(43, 43, 43);
-        background-color: #fff;
-        border-radius: 8px;
-        padding: 10px;
-        width: 100%;
-    }
-
-    .forecast h4 {
-        font-size: 20px;
-        font-weight: 600;
-        color: rgb(43, 43, 43);
-        line-height: 24px;
-        margin: 0;
-        padding: 0;
-    }
-
-    .forecast>ul {
-        display: flex;
-        justify-content: space-between;
-        padding: 0;
-        align-items: center;
-        list-style: none;
-        border: 1px solid #dedede;
-        border-radius: 27px;
-        transition: background-color 1s linear ease-in-out;
-    }
-
-    .forecast>ul>li {
-        flex: 1;
-        text-align: center;
-        padding: 5px 20px;
-    }
-
-    .forecasts {
-        transition: all 2s linear ease-in-out;
-    }
-
-    .forecasts div {
-        display: none;
-    }
-
-    .forecasts div.forecastActive {
-        display: block;
-
-    }
-
-    .forecasts div.forecastActive.dailyForecast ul {
-        transform: translatex(0);
-    }
-
-    .forecasts div.forecastActive.daysWeb ul {
-        transform: translatex(0);
-    }
-
-    .forecasts div.forecastActive.hourlyForecast ul {
-        transform: translatex(0);
-    }
-
-    .forecast ul li.activeForecast {
-        background-color: #1b4de4;
-        color: #fff;
-        width: 100%;
-        padding: 5px 20px;
-        border-radius: 20px;
-    }
-
-    .dailyForecast ul {
-        list-style: none;
-        display: flex;
-        box-sizing: border-box;
-        justify-content: center;
-        padding: 5px 0;
-        text-align: center;
-        margin: 0;
-
-        transform: translatex(100%);
-    }
-
-    .dailyForecast ul li:not(:last-child) {
-        border-right: 2px grey solid;
-        border-image: linear-gradient(180deg, hsla(0, 0%, 87.1%, 0) 0, #dedede 25%, #dedede 70%, hsla(0, 0%, 87.1%, 0) 85%, hsla(0, 0%, 87.1%, 0)) 1 100%;
-    }
-
-    .dailyForecast ul li a {
-        margin-top: -10px;
-        text-decoration: none;
-        color: rgb(43, 43, 43);
-        font-size: 12px;
-        font-weight: 400;
-    }
-
-    .dailyForecast ul li p {
-        margin: 0;
-        padding: 0;
-    }
-
-
-    .dailyForecast ul li p:nth-child(2) {
-        color: rgb(27, 77, 228);
-        font-size: 20px;
-        display: flex;
-        flex-direction: column;
-    }
-
-    .dailyForecast ul li p:nth-child(2) span {
-        color: rgb(43, 43, 43);
-        font-size: 12px;
-        margin-top: -4px;
-    }
-
-    .dailyForecast ul li {
-        display: flex;
-        justify-content: center;
-        flex-basis: 20%;
-        text-align: center;
-    }
-
-    .dailyForecast ul li img {
-        width: 40px;
-    }
-
-    /* -------------------------------- */
-
-    .hourlyForecast ul {
-        list-style: none;
-        display: flex;
-        justify-content: center;
-        padding: 5px 0;
-        margin: 0;
-
-        transform: translateX(50%);
-    }
-
-    .hourlyForecast ul li:not(:last-child) {
-        border-right: 2px grey solid;
-        border-image: linear-gradient(180deg, hsla(0, 0%, 87.1%, 0) 0, #dedede 25%, #dedede 70%, hsla(0, 0%, 87.1%, 0) 85%, hsla(0, 0%, 87.1%, 0)) 1 100%;
-    }
-
-    .hourlyForecast ul li a {
-        margin-top: -10px;
-        color: rgb(43, 43, 43);
-        font-size: 12px;
-        font-weight: 400;
-        text-decoration: none;
-    }
-
-    .hourlyForecast ul li p {
-        padding: 0;
-        margin: 0
-    }
-
-    .hourlyForecast ul li a p:nth-child(2) {
-        color: rgb(27, 77, 228);
-        font-size: 20px;
-    }
-
-    .hourlyForecast ul li {
-        display: flex;
-        justify-content: center;
-        flex-basis: 20%;
-        text-align: center;
-    }
-
-    .hourlyForecast ul li img {
-        width: 40px;
+        font-size: 36px;
     }
 
 }

@@ -1,4 +1,5 @@
 .hourlyForecast {
+    display: none;
     background-color: #fff;
     color: #000;
     width: 100%;
@@ -66,14 +67,9 @@
     font-weight: 700;
 }
 
-.todaysForecastWeb button:hover {
-    box-shadow: 0 0 5px 0 rgba(27, 77, 228, .8);
-    cursor: pointer;
-}
-
-
-@media screen and (max-width: 840px) {
+@media screen and (min-width: 840px) {
     .hourlyForecast {
-        display: none;
+        display: block;
     }
+
 }

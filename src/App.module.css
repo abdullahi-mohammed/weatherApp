@@ -51,9 +51,9 @@
   align-items: center;
   flex-direction: column;
   gap: 20px;
-  width: 800px;
-  max-width: 1300px;
-  margin: 50px auto;
+  width: 100%;
+  padding: 5px;
+  overflow-x: hidden;
 }
 
 .weatherSearch {
@@ -105,10 +105,11 @@
 
 }
 
-@media screen and (max-width: 840px) {
+@media screen and (min-width: 840px) {
+
   .weatherApp {
-    width: 100%;
-    padding: 5px;
-    overflow-x: hidden;
+    width: 800px;
+    max-width: 1300px;
+    margin: 50px auto;
   }
 }

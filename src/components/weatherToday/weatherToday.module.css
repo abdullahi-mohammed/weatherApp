@@ -1,5 +1,6 @@
 .weatherToday {
     width: 100%;
+    height: 100%;
     padding: 20px;
     background-color: #fff;
     color: rgb(43, 43, 43);
@@ -32,10 +33,11 @@
     list-style: none;
     margin: 10px auto 0;
     padding: 10px;
-    display: grid;
+    display: block;
+    /* display: grid;
     grid-template-columns: repeat(2, 1fr);
     column-gap: 90px;
-    align-items: center;
+    align-items: center; */
 }
 
 
@@ -64,12 +66,17 @@
 }
 
 
-@media screen and (max-width: 840px) {
+@media screen and (min-width: 840px) {
+
     .weatherToday {
-        height: 100%;
+        height: unset;
     }
 
     .weatherToday ul {
-        display: block;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 90px;
+        align-items: center;
     }
+
 }

@@ -1,4 +1,6 @@
 .dailyForecast {
+    display: none;
+
     background-color: #fff;
     color: rgb(43, 43, 43);
     width: 100%;
@@ -81,8 +83,8 @@
     cursor: pointer;
 }
 
-@media screen and (max-width: 840px) {
+@media screen and (min-width: 840px) {
     .dailyForecast {
-        display: none;
+        display: block;
     }
 }

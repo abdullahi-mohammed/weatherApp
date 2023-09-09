@@ -36,6 +36,15 @@ function App() {
     setWeatherValue(searchVal)
   }
 
+  const position = (coords) => {
+    const lat = coords.coords.latitude;
+    const lon = coords.coords.longitude;
+    setWeatherValue(lat, lon)
+  }
+
+  navigator.geolocation.getCurrentPosition(position)
+
+
   useEffect(() => {
     (async function () {
       try {
