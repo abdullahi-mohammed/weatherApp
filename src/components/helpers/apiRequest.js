@@ -1,6 +1,6 @@
 
 export const apiRequest = async function (path, method = 'GET', weatherSearchValue = 'nigeria') {
-    const BASEURL = `https://api.weatherapi.com/v1/forecast.json?key=c1d0d0d1154b4d759ea122932233108&q=${weatherSearchValue || 'nigeria'}`
+    const BASEURL = `https://api.weatherapi.com/v1/forecast.json?key=71e272c75cb949d08bb180116252804&q=${weatherSearchValue || 'nigeria'}`
     return new Promise(async (resolve, reject) => {
         try {
             const response = await fetch(BASEURL + path, { method: method })
